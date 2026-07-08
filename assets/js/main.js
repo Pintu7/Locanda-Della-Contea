@@ -59,7 +59,8 @@ document.addEventListener("DOMContentLoaded", function () {
   function fillMenuCard(card, title, prezzo, items) {
     if (!prezzo || !items) return;
     var rows = items.map(function (it) {
-      return '<div class="menu-item" style="border:none;"><div class="desc"><p>' + it.riga + "</p></div></div>";
+      var testo = typeof it === "string" ? it : (it && it.riga) || "";
+      return '<div class="menu-item" style="border:none;"><div class="desc"><p>' + testo + "</p></div></div>";
     }).join("");
     card.innerHTML = "<h3>" + title + ' <span class="price" style="float:right;">' + prezzo + "</span></h3>" + rows;
   }
