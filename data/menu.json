@@ -2,14 +2,24 @@
   "aggiornato": "2026-07-08",
   "nanico_prezzo": "15€",
   "nanico_items": [
-    { "riga": "Insalata di pasta con verdure di stagione (zucchine, cipolle di Tropea, melanzane, carote e peperone) e feta." },
-    { "riga": "Prosciutto crudo e melone." },
-    { "riga": "Misticanza con cetriolo e semi di girasole tostati." }
+    {
+      "riga": "Insalata di pasta con verdure di stagione (zucchine, cipolle di Tropea, melanzane, carote e peperone) e feta."
+    },
+    "Prosciutto crudo e melone2.",
+    {
+      "riga": "Misticanza con cetriolo e semi di girasole tostati."
+    }
   ],
   "elfico_prezzo": "15€",
   "elfico_items": [
-    { "riga": "Tabouleé marocchino: cous cous con pomodoro fresco, menta, prezzemolo, cipollotto e limone." },
-    { "riga": "Tomino fresco con cipolle caramellate." },
-    { "riga": "Valeriana con sesamo tostato e glassa di aceto balsamico." }
+    {
+      "riga": "Tabouleé marocchino: cous cous con pomodoro fresco, menta, prezzemolo, cipollotto e limone."
+    },
+    {
+      "riga": "Tomino fresco con cipolle caramellate."
+    },
+    {
+      "riga": "Valeriana con sesamo tostato e glassa di aceto balsamico."
+    }
   ]
 }
