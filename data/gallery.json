@@ -1,0 +1,24 @@
+{
+  "foto": [
+    { "image": "/assets/img/gallery-02.jpg", "caption": "La Locanda vista dal prato" },
+    { "image": "/assets/img/gallery-01.jpg", "caption": "Insegna in legno all'ingresso" },
+    { "image": "/assets/img/hero-house.jpg", "caption": "La Locanda al crepuscolo" },
+    { "image": "/assets/img/room-nord.jpg", "caption": "Camera Nord" },
+    { "image": "/assets/img/room-sud.jpg", "caption": "Camera Sud" },
+    { "image": "/assets/img/room-ovest.jpg", "caption": "Camera Ovest" },
+    { "image": "/assets/img/gallery-04.jpg", "caption": "Rievocazione fantasy nel prato" },
+    { "image": "/assets/img/gallery-05.jpg", "caption": "Guerrieri in costume" },
+    { "image": "/assets/img/gallery-06.jpg", "caption": "Esibizione di falconeria" },
+    { "image": "/assets/img/gallery-07.jpg", "caption": "Una serata alla Locanda" },
+    { "image": "/assets/img/gallery-08.jpg", "caption": "Il padrone di casa in costume" },
+    { "image": "/assets/img/gallery-11.jpg", "caption": "Fiale Unicorn Blood al bancone" },
+    { "image": "/assets/img/gallery-12.jpg", "caption": "Pozione Amortensia" },
+    { "image": "/assets/img/gallery-09.jpg", "caption": "Decorazione a tema Halloween" },
+    { "image": "/assets/img/gallery-10.jpg", "caption": "Maschera decorativa della Locanda" },
+    { "image": "/assets/img/gallery-13.jpg", "caption": "Calligrafia durante un evento serale" },
+    { "image": "/assets/img/gallery-16.jpg", "caption": "Serata a tema tra gli ospiti della Locanda" },
+    { "image": "/assets/img/gallery-15.jpg", "caption": "Dettaglio di una serata a tema" },
+    { "image": "/assets/img/colazione.jpg", "caption": "Colazione della Locanda" },
+    { "image": "/assets/img/bagno-1.jpg", "caption": "Bagno con lavabo in pietra" }
+  ]
+}

@@ -1,0 +1,42 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "assets/img/gallery-uploads"
+public_folder: "/assets/img/gallery-uploads"
+
+locale: "it"
+
+collections:
+  - name: "menu"
+    label: "Menù della settimana"
+    files:
+      - name: "menu"
+        label: "Piatti Nanico ed Elfico"
+        file: "data/menu.json"
+        fields:
+          - { label: "Prezzo Nanico", name: "nanico_prezzo", widget: "string" }
+          - label: "Ingredienti Nanico (una riga per voce)"
+            name: "nanico_items"
+            widget: "list"
+            field: { label: "Voce", name: "riga", widget: "string" }
+          - { label: "Prezzo Elfico", name: "elfico_prezzo", widget: "string" }
+          - label: "Ingredienti Elfico (una riga per voce)"
+            name: "elfico_items"
+            widget: "list"
+            field: { label: "Voce", name: "riga", widget: "string" }
+          - { label: "Ultimo aggiornamento", name: "aggiornato", widget: "datetime", format: "YYYY-MM-DD", required: false }
+
+  - name: "gallery"
+    label: "Galleria foto"
+    files:
+      - name: "gallery"
+        label: "Foto della Locanda"
+        file: "data/gallery.json"
+        fields:
+          - name: "foto"
+            label: "Foto (trascina per riordinare)"
+            widget: "list"
+            fields:
+              - { label: "Immagine", name: "image", widget: "image" }
+              - { label: "Descrizione", name: "caption", widget: "string", required: false }
