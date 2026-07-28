@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ seo_titolo }}</title>
+<meta name="description" content="{{ seo_descrizione }}">
+<link rel="icon" type="image/png" href="/assets/img/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/style.css">
+{% if pagina == "home" %}
+{# Necessario per gli inviti e i recuperi password del pannello /admin #}
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+<script>
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on("init", function (user) {
+      if (!user) {
+        window.netlifyIdentity.on("login", function () {
+          document.location.href = "/admin/";
+        });
+      }
+    });
+  }
+</script>
+{% endif %}
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="/index.html">
+      <img src="/assets/img/favicon.png" alt="Stemma {{ site.nome }}">
+      <span class="brand-text">{{ site.nome }}<small>{{ site.sottotitolo }}</small></span>
+    </a>
+    <button class="nav-toggle" aria-label="Menu">&#9776;</button>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="/index.html"{% if pagina == "home" %} class="active"{% endif %}>La Locanda</a></li>
+        <li><a href="/chi-siamo.html"{% if pagina == "chisiamo" %} class="active"{% endif %}>Chi Siamo</a></li>
+        <li><a href="/camere.html"{% if pagina == "camere" %} class="active"{% endif %}>Camere &amp; Agriturismo</a></li>
+        <li><a href="/menu.html"{% if pagina == "menu" %} class="active"{% endif %}>Menù</a></li>
+        <li><a href="/galleria.html"{% if pagina == "galleria" %} class="active"{% endif %}>Galleria</a></li>
+        <li><a href="/contatti.html"{% if pagina == "contatti" %} class="active"{% endif %}>Contatti</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+{{ content | safe }}
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <h4>{{ site.nome }}</h4>
+        <p class="small">{{ site.indirizzo_riga1 }}<br>{{ site.indirizzo_riga2 }}</p>
+        <div class="social-row">
+          <a href="{{ site.instagram }}" aria-label="Instagram" target="_blank" rel="noopener">IG</a>
+          <a href="{{ site.tripadvisor }}" aria-label="TripAdvisor" target="_blank" rel="noopener">TA</a>
+        </div>
+      </div>
+      <div>
+        <h4>Esplora</h4>
+        <ul>
+          <li><a href="/chi-siamo.html">Chi Siamo</a></li>
+          <li><a href="/camere.html">Camere</a></li>
+          <li><a href="/menu.html">Menù</a></li>
+          <li><a href="/galleria.html">Galleria</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contatti</h4>
+        <ul>
+          <li><a href="tel:{{ site.telefono_link }}">{{ site.telefono }}</a></li>
+          <li><a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
+          <li><a href="/contatti.html">Come raggiungerci</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">&copy; {{ site.nome }} &middot; The Shire Inn</div>
+  </div>
+</footer>
+
+<script src="/assets/js/main.js"></script>
+</body>
+</html>

@@ -25,6 +25,10 @@
   --cream: #faf3df;
   --shadow: rgba(20, 14, 6, 0.35);
   --max-width: 1180px;
+  /* Spessore del bordo dorato dell'header. La nav mobile lo somma a top:100%
+     perche' il posizionamento assoluto si calcola sul padding box, che il
+     bordo lo esclude: senza questo, il menu aperto ci finisce sopra. */
+  --header-border: 3px;
 }
 
 * { box-sizing: border-box; }
@@ -73,7 +77,7 @@ img { max-width: 100%; display: block; }
   top: 0;
   z-index: 100;
   background: linear-gradient(180deg, var(--wood-dark), #2e2013 90%);
-  border-bottom: 3px solid var(--gold);
+  border-bottom: var(--header-border) solid var(--gold);
   box-shadow: 0 3px 10px var(--shadow);
 }
 
@@ -522,11 +526,11 @@ footer.site-footer {
 @media (max-width: 700px) {
   nav.main-nav {
     position: absolute;
-    top: 100%;
+    top: calc(100% + var(--header-border));
     left: 0;
     right: 0;
     background: var(--wood-dark);
-    border-bottom: 3px solid var(--gold);
+    border-bottom: var(--header-border) solid var(--gold);
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.3s ease;

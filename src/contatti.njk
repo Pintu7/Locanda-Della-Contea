@@ -1,0 +1,74 @@
+---
+layout: layout.njk
+permalink: /contatti.html
+pagina: contatti
+---
+<section class="hero page-hero" style="background-image:url('{{ contatti.hero_immagine }}');">
+  <div class="hero-content">
+    <h1>{{ contatti.hero_titolo }}</h1>
+    <p class="tagline">{{ contatti.hero_sottotitolo }}</p>
+  </div>
+</section>
+
+<section>
+  <div class="container split">
+    <div>
+      <span class="tag">{{ contatti.tag }}</span>
+      <h2>{{ contatti.titolo }}</h2>
+      <ul class="info-list">
+        <li>{{ site.indirizzo_riga1 }}, {{ site.indirizzo_riga2 }}</li>
+        <li>Tel. / WhatsApp: <a href="tel:{{ site.telefono_link }}">{{ site.telefono }}</a></li>
+        <li>Email: <a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
+        <li>Facebook: {{ contatti.facebook_nome }}</li>
+      </ul>
+
+      {% if contatti.orari and contatti.orari.length %}
+      <h3 style="margin-top:2rem;">Quando siamo aperti</h3>
+      <ul class="info-list">
+        {% for o in contatti.orari %}
+        <li>{{ o.giorno }}: {{ o.orario }}</li>
+        {% endfor %}
+      </ul>
+      {% endif %}
+
+      <p style="margin-top:1.5rem;">{{ contatti.nota }}</p>
+      <div class="btn-row" style="justify-content:flex-start;">
+        <a class="btn btn-primary" href="https://wa.me/{{ site.whatsapp_link }}" target="_blank" rel="noopener">Scrivici su WhatsApp</a>
+        <a class="btn btn-outline" style="color:var(--maroon); border-color:var(--maroon);" href="mailto:{{ site.email }}">Invia una email</a>
+      </div>
+    </div>
+    <div class="map-wrap">
+      <iframe src="{{ contatti.mappa_embed }}" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Mappa {{ site.nome }}"></iframe>
+      <p class="small text-center" style="margin:0.5rem 0 0;"><a href="{{ contatti.mappa_link }}" target="_blank" rel="noopener">Apri in Google Maps &rarr;</a></p>
+    </div>
+  </div>
+</section>
+
+<section class="section-alt">
+  <div class="container">
+    <div class="section-head">
+      <span class="kicker">{{ contatti.indicazioni_kicker }}</span>
+      <h2>{{ contatti.indicazioni_titolo }}</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="grid grid-3">
+      {% for i in contatti.indicazioni %}
+      <div class="card"><div class="card-body">
+        <h3>{{ i.da }}</h3>
+        <p>{{ i.testo }}</p>
+      </div></div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section-dark text-center">
+  <div class="container">
+    <h2>{{ contatti.chiusura_titolo }}</h2>
+    <p>{{ contatti.chiusura_testo }}</p>
+    <div class="btn-row">
+      <a class="btn btn-primary" href="/camere.html">Prenota una camera</a>
+      <a class="btn btn-outline" href="/menu.html">Vedi il menù</a>
+    </div>
+  </div>
+</section>

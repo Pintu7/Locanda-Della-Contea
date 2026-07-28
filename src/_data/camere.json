@@ -1,0 +1,56 @@
+{
+  "seo_titolo": "Camere & Agriturismo — Locanda della Contea",
+  "seo_descrizione": "Tre camere — Nord, Sud e Ovest — nell'agriturismo km0 Locanda della Contea a Montalenghe. Prezzi e prenotazioni.",
+
+  "hero_immagine": "/assets/img/room-1.jpg",
+  "hero_titolo": "Camere & Agriturismo",
+  "hero_sottotitolo": "Tanti posti letto, o la doccia in mezzo alla paglia?",
+
+  "intro_kicker": "Pernottare in Contea",
+  "intro_titolo": "Turismo, come tutto ciò che è viaggio. Agri, come tutto ciò che ci circonda.",
+  "intro_testo": "In Locanda si può pernottare: tre camere con aria condizionata, ognuna con la propria identità — Nord, Sud e Ovest.",
+
+  "camere": [
+    {
+      "immagine": "/assets/img/room-nord.jpg",
+      "nome": "Nord",
+      "testo": "Camera con travi a vista e atmosfera rustica, per chi cerca il calore del focolare."
+    },
+    {
+      "immagine": "/assets/img/room-sud.jpg",
+      "nome": "Sud",
+      "testo": "Con letto matrimoniale e letto a castello: la scelta ideale per famiglie e gruppi."
+    },
+    {
+      "immagine": "/assets/img/room-ovest.jpg",
+      "nome": "Ovest",
+      "testo": "La più raccolta delle tre, con vista sui campi, ideale per un soggiorno tranquillo."
+    }
+  ],
+
+  "bagni_kicker": "Nei bagni",
+  "bagni_titolo": "Dettagli fatti a mano",
+  "bagni_testo": "Lavabi in pietra su radici di teak, specchi in legno recuperato: ogni angolo racconta la stessa cura artigianale.",
+  "bagni_foto": [
+    { "immagine": "/assets/img/bagno-1.jpg", "descrizione": "Bagno con lavabo in pietra su radice di teak" },
+    { "immagine": "/assets/img/bagno-2.jpg", "descrizione": "Bagno con specchio in legno e scaletta decorativa" }
+  ],
+
+  "colazione_immagine": "/assets/img/colazione.jpg",
+  "colazione_tag": "Ogni mattina",
+  "colazione_titolo": "Colazione compresa",
+  "colazione_testo": "Torte fatte in casa, marmellate, dolci al piatto e una tavola apparecchiata come si conviene a una Contea: niente buffet anonimo, solo colazione di casa.",
+
+  "prezzi_kicker": "Prezzi",
+  "prezzi_titolo": "A camera, colazione inclusa",
+  "prezzi": [
+    { "tipo": "Singola", "prezzo": "70€" },
+    { "tipo": "Doppia", "prezzo": "85€" },
+    { "tipo": "Tripla", "prezzo": "120€" },
+    { "tipo": "Quadrupla", "prezzo": "140€" }
+  ],
+
+  "prenota_kicker": "Prenotazioni",
+  "prenota_titolo": "Prenota il tuo angolo di Contea",
+  "prenota_testo": "Scrivici o chiamaci per verificare la disponibilità delle camere."
+}

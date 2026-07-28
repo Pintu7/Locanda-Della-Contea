@@ -1,0 +1,45 @@
+{
+  "seo_titolo": "Chi Siamo — Locanda della Contea",
+  "seo_descrizione": "La storia della famiglia di famiglie che ha creato la Locanda della Contea, agriturismo km0 a tema Signore degli Anelli a Montalenghe.",
+
+  "hero_immagine": "/assets/img/hero-house.jpg",
+  "hero_titolo": "Chi Siamo",
+  "hero_sottotitolo": "Una famiglia di famiglie",
+
+  "storia_immagine": "/assets/img/gallery-08.jpg",
+  "storia_tag": "La nostra storia",
+  "storia_titolo": "Due architetti, quattro musicisti, due contadini…",
+  "storia_testo": "…due contabili, tre tuttofare, quattro osti, una organizzatrice di eventi, svariati cuochi e due minorenni… eppure siamo molti meno di quel che sembra!\n\nInnanzitutto siamo una **famiglia di famiglie**, motivo principale per cui questo grande sogno non è rimasto un'utopia.",
+
+  "anima_immagine": "/assets/img/gallery-07.jpg",
+  "anima_titolo": "Perché diamo l'anima, senza risparmiarci",
+  "anima_testo": "Perché un problema diventa un problema di tutti, e quindi vi sono mille soluzioni.\n\nPerché, soprattutto, questo ambizioso progetto non parte da un'idea di business ma dalla voglia di **cambiare vita**, riordinare le priorità… e contagiare gli altri a fare lo stesso.",
+
+  "spirito_kicker": "Lo spirito della Contea",
+  "spirito_titolo": "Vieni come sei, resta come amico",
+  "spirito_punti": [
+    {
+      "titolo": "Niente fretta",
+      "testo": "Arrivi in Locanda e non c'è posto? Prenditi il tuo tempo, bevi qualcosa al bancone e siediti con chi è già lì."
+    },
+    {
+      "titolo": "Niente telefono",
+      "testo": "Fai due foto e poi mettilo via: parla, fai amicizia, gioca a giochi di società o di ruolo con chi è nella Contea come te."
+    },
+    {
+      "titolo": "Qualcosa in comune",
+      "testo": "Se siete tutti in Locanda è perché avete qualcosa in comune. Scoprite cosa, un boccale alla volta."
+    }
+  ],
+
+  "eventi_kicker": "Rievocazioni & Falconeria",
+  "eventi_titolo": "La Contea si anima",
+  "eventi_testo": "Nel nostro prato ospitiamo raduni a tema fantasy, rievocazioni storiche e giornate con i rapaci: la Contea prende vita per grandi e piccoli.",
+  "eventi_foto": [
+    { "immagine": "/assets/img/gallery-04.jpg", "descrizione": "Rievocazione fantasy nel prato della Locanda" },
+    { "immagine": "/assets/img/gallery-06.jpg", "descrizione": "Esibizione di falconeria alla Locanda" },
+    { "immagine": "/assets/img/gallery-05.jpg", "descrizione": "Guerrieri in costume durante un evento fantasy" }
+  ],
+
+  "chiusura_titolo": "Vieni a scoprire la Contea"
+}

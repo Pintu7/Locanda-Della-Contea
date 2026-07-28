@@ -1,31 +1,62 @@
-# Come aggiornare il sito (menù e foto)
+# Come aggiornare il sito
 
-Niente codice, niente file da modificare a mano: si usa una pagina web con dei semplici moduli.
+Niente codice, niente file da toccare: si usa una pagina web con dei moduli, come compilare un form.
 
 ## Accesso
 
 1. Vai su `https://<indirizzo-del-sito>/admin`
-2. Accedi con l'email e la password che hai ricevuto via mail (se è la prima volta, avrai ricevuto un invito da Netlify: clicca il link e imposta la password).
+2. Accedi con l'email e la password che hai ricevuto via mail. Se è la prima volta hai ricevuto un invito da Netlify: clicca il link e imposta la password.
 
-## Cambiare il menù della settimana
+## Cosa puoi modificare
 
-1. Nel pannello, clicca **"Menù della settimana"**.
-2. Clicca **"Piatti Nanico ed Elfico"**.
-3. Modifica prezzo e voci dei due piatti (ogni voce è una riga: es. "Prosciutto crudo e melone").
-4. Per aggiungere una riga clicca **"+ Add"** sotto la lista, per toglierla usa il cestino.
-5. In alto a destra clicca **"Publish"** (o "Salva" + "Pubblica").
-6. Il sito si aggiorna da solo in 1-2 minuti. Non serve toccare altro.
+Nella colonna di sinistra trovi una voce per ogni parte del sito:
 
-## Aggiungere o togliere foto dalla galleria
+| Voce | Cosa contiene |
+|---|---|
+| 🍲 **Menù della settimana** | I piatti Nanico ed Elfico, prezzi, spuntini, foto delle bevande |
+| 📷 **Galleria foto** | Tutte le foto della pagina Galleria |
+| 🛏️ **Camere e prezzi** | Descrizione e foto delle tre camere, prezzi, bagni, colazione |
+| 🏠 **Home page** | Copertina, testi, i tre riquadri, le recensioni |
+| 📖 **Chi Siamo** | La vostra storia, lo spirito della Contea, foto degli eventi |
+| 📍 **Contatti e orari** | Orari di apertura, indicazioni stradali, mappa |
+| ⚙️ **Recapiti** | Telefono, email, indirizzo, link social — valgono su tutte le pagine |
 
-1. Nel pannello, clicca **"Galleria foto"** → **"Foto della Locanda"**.
-2. Per aggiungere una foto: clicca **"+ Add"** in fondo alla lista, poi **"Choose an image"** per caricarla dal telefono/computer, e scrivi una breve descrizione.
-3. Per togliere una foto: clicca il cestino sulla riga corrispondente.
-4. Per cambiare l'ordine: trascina le foto dalla maniglia (le due righe a sinistra di ogni riquadro).
-5. Clicca **"Publish"** in alto a destra.
+## La regola d'oro
 
-## Attenzione
+Dopo ogni modifica clicca **"Publish"** in alto a destra, altrimenti resta una bozza e sul sito non si vede nulla.
 
-- Ogni modifica va sempre chiusa con **"Publish"**, altrimenti resta solo una bozza non visibile sul sito.
-- Le foto troppo pesanti (oltre 5-6 MB) possono rallentare il caricamento: se il telefono la fa vedere "pesante", va bene comunque, il sito la ridimensiona per la visualizzazione.
-- Se qualcosa non torna o il pannello dà errore, scrivi ad Andrea.
+Il sito si aggiorna da solo in **1-2 minuti**. Se ricarichi subito potresti vedere ancora la versione vecchia: aspetta un attimo e ricarica di nuovo.
+
+## Come si fanno le cose
+
+**Cambiare il menù della settimana**
+Menù della settimana → Piatti Nanico ed Elfico → modifica le portate → Publish.
+Ogni portata è una riga. Il bottone **+** aggiunge una riga, il **cestino** la toglie.
+
+**Aggiungere una foto alla galleria**
+Galleria foto → in fondo alla lista clicca **+** → "Choose an image" → carica la foto dal telefono o dal computer → scrivi una breve descrizione → Publish.
+
+**Cambiare l'ordine delle foto**
+Trascinale usando la maniglia (le righette a sinistra di ogni riquadro).
+
+**Cambiare un prezzo delle camere**
+Camere e prezzi → sezione Prezzi → scrivi il nuovo importo (es. `90€`) → Publish.
+
+**Cambiare gli orari di apertura**
+Contatti e orari → Orari di apertura → modifica giorno e orario, oppure aggiungi una riga con **+** → Publish.
+
+**Cambiare il numero di telefono o l'email**
+Recapiti → modifica → Publish. Cambia su tutte le pagine in una volta sola.
+Attenzione: il campo "Telefono (per chiamare)" va scritto senza spazi e con il prefisso, così: `+393939105548`.
+
+## Testi in grassetto
+
+Alcuni campi (le storie, i testi lunghi) permettono il grassetto: seleziona la parola e usa il pulsante **B**, oppure scrivila tra due asterischi `**così**`.
+
+## Se qualcosa non va
+
+- **Non vedo le modifiche sul sito** → hai cliccato "Publish"? Poi aspetta 2 minuti e ricarica.
+- **Il pannello non mi fa entrare** → prova a fare logout e login di nuovo.
+- **Ho cancellato qualcosa per sbaglio** → niente panico, si recupera tutto. Scrivi ad Andrea.
+
+Per qualsiasi dubbio, scrivi ad Andrea.

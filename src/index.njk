@@ -1,0 +1,85 @@
+---
+layout: layout.njk
+permalink: /index.html
+pagina: home
+---
+<section class="hero" style="background-image:url('{{ home.hero_immagine }}');">
+  <div class="hero-content">
+    <h1>{{ home.hero_titolo }}</h1>
+    <p class="tagline">{{ home.hero_sottotitolo }}</p>
+    <p>{{ home.hero_testo }}</p>
+    <div class="btn-row">
+      <a class="btn btn-primary" href="/camere.html">Le Camere</a>
+      <a class="btn btn-outline" href="/menu.html">Il Menù</a>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-head">
+      <span class="kicker">{{ home.intro_kicker }}</span>
+      <h2>{{ home.intro_titolo }}</h2>
+      <div class="divider"></div>
+      <p>{{ home.intro_testo }}</p>
+    </div>
+
+    <div class="grid grid-3">
+      {% for r in home.riquadri %}
+      <div class="card">
+        <img src="{{ r.immagine }}" alt="{{ r.titolo }}">
+        <div class="card-body">
+          <h3>{{ r.titolo }}</h3>
+          <p>{{ r.testo }}</p>
+          {% if r.link_url %}<a href="{{ r.link_url }}">{{ r.link_testo }}</a>{% endif %}
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section-alt">
+  <div class="container split">
+    <div class="split-img">
+      <img src="{{ home.storia_immagine }}" alt="{{ home.storia_titolo }}">
+    </div>
+    <div>
+      <span class="tag">{{ home.storia_tag }}</span>
+      <h2>{{ home.storia_titolo }}</h2>
+      {{ home.storia_testo | md | safe }}
+      <a class="btn btn-primary" href="/chi-siamo.html">{{ home.storia_bottone }}</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-dark">
+  <div class="container">
+    <div class="section-head">
+      <span class="kicker">{{ home.recensioni_kicker }}</span>
+      <h2>{{ home.recensioni_titolo }}</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="quote-grid">
+      {% for rec in home.recensioni %}
+      <blockquote class="quote">
+        &laquo;{{ rec.testo }}&raquo;
+        <cite>{{ rec.fonte }}</cite>
+      </blockquote>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container text-center">
+    <span class="kicker">{{ home.chiusura_kicker }}</span>
+    <h2>{{ home.chiusura_titolo }}</h2>
+    <p>{{ home.chiusura_testo }}</p>
+    <div class="btn-row">
+      <a class="btn btn-primary" href="tel:{{ site.telefono_link }}">{{ site.telefono }}</a>
+      <a class="btn btn-outline" style="color:var(--maroon); border-color:var(--maroon);" href="mailto:{{ site.email }}">{{ site.email }}</a>
+      <a class="btn btn-outline" style="color:var(--maroon); border-color:var(--maroon);" href="/contatti.html">Come raggiungerci</a>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,93 @@
+---
+layout: layout.njk
+permalink: /camere.html
+pagina: camere
+---
+<section class="hero page-hero" style="background-image:url('{{ camere.hero_immagine }}');">
+  <div class="hero-content">
+    <h1>{{ camere.hero_titolo }}</h1>
+    <p class="tagline">{{ camere.hero_sottotitolo }}</p>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-head">
+      <span class="kicker">{{ camere.intro_kicker }}</span>
+      <h2>{{ camere.intro_titolo }}</h2>
+      <div class="divider"></div>
+      <p>{{ camere.intro_testo }}</p>
+    </div>
+
+    <div class="grid grid-3">
+      {% for c in camere.camere %}
+      <div class="card">
+        <img src="{{ c.immagine }}" alt="Camera {{ c.nome }}">
+        <div class="card-body">
+          <h3>{{ c.nome }}</h3>
+          <p>{{ c.testo }}</p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section-alt">
+  <div class="container">
+    <div class="section-head">
+      <span class="kicker">{{ camere.bagni_kicker }}</span>
+      <h2>{{ camere.bagni_titolo }}</h2>
+      <div class="divider"></div>
+      <p>{{ camere.bagni_testo }}</p>
+    </div>
+    <div class="grid grid-2">
+      {% for f in camere.bagni_foto %}
+      <img src="{{ f.immagine }}" alt="{{ f.descrizione }}" style="border-radius:6px;box-shadow:0 8px 20px rgba(0,0,0,.2);">
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container split reverse">
+    <div class="split-img">
+      <img src="{{ camere.colazione_immagine }}" alt="{{ camere.colazione_titolo }}">
+    </div>
+    <div>
+      <span class="tag">{{ camere.colazione_tag }}</span>
+      <h2>{{ camere.colazione_titolo }}</h2>
+      {{ camere.colazione_testo | md | safe }}
+    </div>
+  </div>
+</section>
+
+<section class="section-alt">
+  <div class="container">
+    <div class="section-head">
+      <span class="kicker">{{ camere.prezzi_kicker }}</span>
+      <h2>{{ camere.prezzi_titolo }}</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="grid grid-4">
+      {% for p in camere.prezzi %}
+      <div class="card"><div class="card-body text-center">
+        <h3>{{ p.tipo }}</h3>
+        <p class="price">{{ p.prezzo }}</p>
+      </div></div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section-dark text-center">
+  <div class="container">
+    <span class="kicker">{{ camere.prenota_kicker }}</span>
+    <h2>{{ camere.prenota_titolo }}</h2>
+    <p>{{ camere.prenota_testo }}</p>
+    <div class="btn-row">
+      <a class="btn btn-primary" href="tel:{{ site.telefono_link }}">{{ site.telefono }}</a>
+      <a class="btn btn-outline" href="mailto:{{ site.email }}">{{ site.email }}</a>
+    </div>
+  </div>
+</section>

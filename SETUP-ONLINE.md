@@ -1,34 +1,75 @@
-# Mettere online il sito + pannello di modifica
+# Setup tecnico
 
-Passi una tantum, li fai tu (Andrea). Dopo questo setup i gestori useranno solo `/admin`.
+Il sito è generato con [Eleventy](https://www.11ty.dev/): i testi vivono in file JSON dentro `src/_data/`, i template in `src/`, e la build produce HTML statico in `_site/`. I gestori modificano i JSON tramite il pannello Decap CMS su `/admin`, Netlify ricompila a ogni salvataggio.
 
-## 1. Carica il codice su GitHub
+## Struttura
 
 ```
-gh repo create locanda-della-contea --private --source=. --remote=origin --push
+src/
+  _data/          ← tutti i testi e le foto delle pagine (li scrive il pannello)
+    site.json         recapiti validi su tutto il sito
+    home.json         home page
+    chisiamo.json     pagina Chi Siamo
+    camere.json       camere, prezzi, bagni, colazione
+    menu.json         piatti, spuntini, bevande
+    galleria.json     elenco foto
+    contatti.json     orari, indicazioni, mappa
+  _includes/
+    layout.njk    ← header, footer e <head> condivisi
+  *.njk           ← una pagina per file
+  src.11tydata.js ← titolo/descrizione Google presi da _data
+admin/            ← pannello CMS (config.yml definisce i campi)
+assets/           ← immagini, CSS, font Aniron, JS
 ```
 
-(oppure crea il repo a mano su github.com e fai `git remote add origin <url>` + `git push -u origin main`)
+## Lavorare in locale
 
-## 2. Collega a Netlify
+```bash
+npm install
+npm run dev
+```
 
-1. Vai su [app.netlify.com](https://app.netlify.com) → "Add new site" → "Import an existing project" → GitHub → scegli il repo.
-2. Build command: lascia vuoto. Publish directory: `.` (radice). Nessun build necessario, è tutto statico.
-3. Deploy.
+Server su `http://localhost:8080` con ricarica automatica. Per la sola build: `npm run build`.
 
-## 3. Attiva Identity + Git Gateway (serve per far funzionare il pannello /admin)
+## Deploy
 
-1. Nel pannello Netlify del sito → **Site configuration → Identity → Enable Identity**.
-2. In Identity → **Registration**: imposta su "Invite only" (così solo chi inviti può accedere).
-3. In Identity → **Services → Git Gateway → Enable Git Gateway**.
-4. In Identity → **Invite users**: invita l'email dei gestori. Ricevono una mail, cliccano, impostano una password.
+Netlify legge `netlify.toml`: build `npm run build`, publish `_site`. Ogni push su `main` — inclusi quelli fatti dal pannello CMS — fa partire un deploy.
 
-## 4. Verifica dominio
+## Attivazione del pannello (già fatto, qui per riferimento)
 
-Di default Netlify dà un indirizzo tipo `nome-a-caso.netlify.app`. Da Site configuration → Domain management puoi collegare `locandadellacontea.it` quando pronti (basta cambiare i DNS presso il registrar attuale).
+1. Netlify → **Site configuration → Identity → Enable Identity**
+2. Identity → **Registration** → "Invite only"
+3. Identity → **Services → Git Gateway → Enable**
+4. Identity → **Invite users** → email dei gestori
 
-## Fatto
+## Aggiungere un campo modificabile dal pannello
 
-Da ora i gestori vanno su `https://<tuosito>.netlify.app/admin`, fanno login con l'email invitata, e modificano menù e foto da lì. Vedi [ISTRUZIONI-GESTORI.md](ISTRUZIONI-GESTORI.md).
+Tre passaggi, in quest'ordine:
 
-Ogni salvataggio dal pannello aggiorna direttamente il sito online in 1-2 minuti, senza bisogno di te.
+1. Aggiungi la chiave nel JSON in `src/_data/`
+2. Usala nel template `.njk`
+3. Dichiarala in `admin/config.yml` nella collection giusta
+
+⚠️ **Il passaggio 3 non è opzionale.** Decap riscrive il file con i soli campi dichiarati nella config: una chiave presente nel JSON ma assente dalla config viene **cancellata** al primo salvataggio dal pannello, e la pagina si rompe.
+
+Per verificare che config e dati combacino:
+
+```bash
+node -e "
+const fs=require('fs'), yaml=require('js-yaml');
+const c = yaml.load(fs.readFileSync('admin/config.yml','utf8'));
+for (const col of c.collections) for (const f of (col.files||[])) {
+  const dati = JSON.parse(fs.readFileSync(f.file,'utf8'));
+  const dichiarati = new Set(f.fields.map(x=>x.name));
+  const orfani = Object.keys(dati).filter(k=>!dichiarati.has(k));
+  if (orfani.length) console.log(f.file, '→ verrebbero cancellati:', orfani.join(', '));
+}
+console.log('controllo finito');
+"
+```
+
+## Note
+
+- **Le voci dei piatti sono stringhe semplici**, non oggetti: è il formato che il widget `list` di Decap con un solo `field` produce naturalmente. Mescolare i due formati causava `undefined` in pagina; il template ha comunque un fallback per dati vecchi.
+- **`--header-border` in `style.css`** tiene allineati il bordo dell'header e la posizione della nav mobile. Il posizionamento assoluto si calcola sul padding box (che esclude il bordo), quindi senza quella variabile il menu aperto si sovrappone al bordo dorato e si vedono due righe gialle.
+- **Il widget Netlify Identity** è caricato solo sulla home, dove atterrano i link di invito e recupero password.

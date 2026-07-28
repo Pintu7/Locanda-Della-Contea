@@ -1,0 +1,92 @@
+---
+layout: layout.njk
+permalink: /menu.html
+pagina: menu
+---
+{# Le voci arrivano dal pannello come stringhe; il fallback .riga copre eventuali dati vecchi #}
+{% macro voci(items) %}
+  {% for v in items %}
+  <div class="menu-item"{% if loop.first %} style="border:none;padding-top:0;"{% elif loop.last %} style="border:none;"{% endif %}>
+    <div class="desc"><p>{% if v is string %}{{ v }}{% else %}{{ v.riga }}{% endif %}</p></div>
+  </div>
+  {% endfor %}
+{% endmacro %}
+
+<section class="hero page-hero" style="background-image:url('{{ menu.hero_immagine }}');">
+  <div class="hero-content">
+    <h1>{{ menu.hero_titolo }}</h1>
+    <p class="tagline">{{ menu.hero_sottotitolo }}</p>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-head">
+      <span class="kicker">{{ menu.piatti_kicker }}</span>
+      <h2>{{ menu.piatti_titolo }}</h2>
+      <div class="divider"></div>
+      <p>{{ menu.piatti_testo }}</p>
+    </div>
+
+    <div class="grid grid-2">
+      <div class="card">
+        <div class="card-body">
+          <h3>Piatto Nanico <span class="price" style="float:right;">{{ menu.nanico_prezzo }}</span></h3>
+          {{ voci(menu.nanico_items) }}
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-body">
+          <h3>Piatto Elfico <span class="price" style="float:right;">{{ menu.elfico_prezzo }}</span></h3>
+          {{ voci(menu.elfico_items) }}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-alt">
+  <div class="container">
+    <div class="section-head">
+      <span class="kicker">{{ menu.spuntini_kicker }}</span>
+      <h2>{{ menu.spuntini_titolo }}</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="grid grid-2" style="max-width:800px;margin:0 auto;">
+      <ul class="info-list">
+        {% for s in menu.spuntini %}{% if loop.index0 < (menu.spuntini.length / 2) %}<li>{{ s }}</li>{% endif %}{% endfor %}
+      </ul>
+      <ul class="info-list">
+        {% for s in menu.spuntini %}{% if loop.index0 >= (menu.spuntini.length / 2) %}<li>{{ s }}</li>{% endif %}{% endfor %}
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="section-dark">
+  <div class="container">
+    <div class="section-head">
+      <span class="kicker">{{ menu.bevande_kicker }}</span>
+      <h2>{{ menu.bevande_titolo }}</h2>
+      <div class="divider"></div>
+      <p>{{ menu.bevande_testo }}</p>
+    </div>
+    <div class="grid grid-2">
+      {% for f in menu.bevande_foto %}
+      <img src="{{ f.immagine }}" alt="{{ f.descrizione }}" style="border-radius:6px;">
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="text-center">
+  <div class="container">
+    <h2>{{ menu.funziona_titolo }}</h2>
+    <div style="max-width:700px;margin:0 auto 2rem;">{{ menu.funziona_testo | md | safe }}</div>
+    <div class="btn-row">
+      <a class="btn btn-primary" href="mailto:{{ site.email }}">Prenota via email</a>
+      <a class="btn btn-outline" style="color:var(--maroon); border-color:var(--maroon);" href="https://wa.me/{{ site.whatsapp_link }}" target="_blank" rel="noopener">Scrivici su WhatsApp</a>
+    </div>
+  </div>
+</section>

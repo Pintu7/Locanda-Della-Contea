@@ -1,0 +1,37 @@
+---
+layout: layout.njk
+permalink: /galleria.html
+pagina: galleria
+---
+<section class="hero page-hero" style="background-image:url('{{ galleria.hero_immagine }}');">
+  <div class="hero-content">
+    <h1>{{ galleria.hero_titolo }}</h1>
+    <p class="tagline">{{ galleria.hero_sottotitolo }}</p>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="gallery-grid">
+      {% for f in galleria.foto %}
+      <a href="{{ f.image }}" data-lightbox data-caption="{{ f.caption }}"><img src="{{ f.image }}" alt="{{ f.caption }}" loading="lazy"></a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<div class="lightbox">
+  <button class="lightbox-close" aria-label="Chiudi">&times;</button>
+  <img alt="">
+</div>
+
+<section class="section-alt text-center">
+  <div class="container">
+    <h2>{{ galleria.chiusura_titolo }}</h2>
+    <p>{{ galleria.chiusura_testo }}</p>
+    <div class="btn-row">
+      <a class="btn btn-primary" href="{{ site.instagram }}" target="_blank" rel="noopener">Instagram</a>
+      <a class="btn btn-outline" style="color:var(--maroon); border-color:var(--maroon);" href="{{ site.tripadvisor }}" target="_blank" rel="noopener">TripAdvisor</a>
+    </div>
+  </div>
+</section>

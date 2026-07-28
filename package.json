@@ -1,0 +1,24 @@
+{
+  "name": "locanda-della-contea",
+  "version": "1.0.0",
+  "description": "Sito Locanda della Contea - The Shire Inn, Montalenghe (TO)",
+  "scripts": {
+    "build": "eleventy",
+    "start": "eleventy --serve --port=8080",
+    "dev": "eleventy --serve --port=8080"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Pintu7/Locanda-Della-Contea.git"
+  },
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/Pintu7/Locanda-Della-Contea/issues"
+  },
+  "homepage": "https://github.com/Pintu7/Locanda-Della-Contea#readme",
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.6",
+    "markdown-it": "^14.3.0"
+  },
+  "private": true
+}

@@ -1,0 +1,77 @@
+---
+layout: layout.njk
+permalink: /chi-siamo.html
+pagina: chisiamo
+---
+<section class="hero page-hero" style="background-image:url('{{ chisiamo.hero_immagine }}');">
+  <div class="hero-content">
+    <h1>{{ chisiamo.hero_titolo }}</h1>
+    <p class="tagline">{{ chisiamo.hero_sottotitolo }}</p>
+  </div>
+</section>
+
+<section>
+  <div class="container split">
+    <div class="split-img">
+      <img src="{{ chisiamo.storia_immagine }}" alt="{{ chisiamo.storia_titolo }}">
+    </div>
+    <div>
+      <span class="tag">{{ chisiamo.storia_tag }}</span>
+      <h2>{{ chisiamo.storia_titolo }}</h2>
+      {{ chisiamo.storia_testo | md | safe }}
+    </div>
+  </div>
+</section>
+
+<section class="section-alt">
+  <div class="container split reverse">
+    <div class="split-img">
+      <img src="{{ chisiamo.anima_immagine }}" alt="{{ chisiamo.anima_titolo }}">
+    </div>
+    <div>
+      <h2>{{ chisiamo.anima_titolo }}</h2>
+      {{ chisiamo.anima_testo | md | safe }}
+    </div>
+  </div>
+</section>
+
+<section class="section-dark">
+  <div class="container">
+    <div class="section-head">
+      <span class="kicker">{{ chisiamo.spirito_kicker }}</span>
+      <h2>{{ chisiamo.spirito_titolo }}</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="grid grid-3">
+      {% for p in chisiamo.spirito_punti %}
+      <div>
+        <h3>{{ p.titolo }}</h3>
+        <p>{{ p.testo }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container text-center">
+    <span class="kicker">{{ chisiamo.eventi_kicker }}</span>
+    <h2>{{ chisiamo.eventi_titolo }}</h2>
+    <p style="max-width:700px;margin:0 auto 2.5rem;">{{ chisiamo.eventi_testo }}</p>
+    <div class="grid grid-3">
+      {% for f in chisiamo.eventi_foto %}
+      <img src="{{ f.immagine }}" alt="{{ f.descrizione }}" style="border-radius:6px;box-shadow:0 8px 20px rgba(0,0,0,.2);">
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section-alt text-center">
+  <div class="container">
+    <h2>{{ chisiamo.chiusura_titolo }}</h2>
+    <div class="btn-row">
+      <a class="btn btn-primary" href="/camere.html">Prenota una camera</a>
+      <a class="btn btn-outline" style="color:var(--maroon); border-color:var(--maroon);" href="/contatti.html">Contattaci</a>
+    </div>
+  </div>
+</section>

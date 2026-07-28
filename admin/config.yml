@@ -8,35 +8,255 @@ public_folder: "/assets/img/gallery-uploads"
 locale: "it"
 
 collections:
+  # ---------------------------------------------------------------
   - name: "menu"
-    label: "Menù della settimana"
+    label: "🍲 Menù della settimana"
     files:
       - name: "menu"
         label: "Piatti Nanico ed Elfico"
-        file: "data/menu.json"
+        file: "src/_data/menu.json"
         fields:
-          - { label: "Prezzo Nanico", name: "nanico_prezzo", widget: "string" }
-          - label: "Ingredienti Nanico (una riga per voce)"
+          - { label: "Prezzo del piatto Nanico", name: "nanico_prezzo", widget: "string", hint: "Es. 15€" }
+          - label: "Piatto Nanico — cosa contiene"
             name: "nanico_items"
             widget: "list"
-            field: { label: "Voce", name: "riga", widget: "string" }
-          - { label: "Prezzo Elfico", name: "elfico_prezzo", widget: "string" }
-          - label: "Ingredienti Elfico (una riga per voce)"
+            hint: "Una riga per ogni portata. Usa + per aggiungerne una."
+            field: { label: "Portata", name: "voce", widget: "string" }
+          - { label: "Prezzo del piatto Elfico", name: "elfico_prezzo", widget: "string", hint: "Es. 15€" }
+          - label: "Piatto Elfico — cosa contiene"
             name: "elfico_items"
             widget: "list"
-            field: { label: "Voce", name: "riga", widget: "string" }
-          - { label: "Ultimo aggiornamento", name: "aggiornato", widget: "datetime", format: "YYYY-MM-DD", required: false }
+            hint: "Una riga per ogni portata. Usa + per aggiungerne una."
+            field: { label: "Portata", name: "voce", widget: "string" }
+          - label: "Spuntini e salvasbronza"
+            name: "spuntini"
+            widget: "list"
+            field: { label: "Spuntino", name: "voce", widget: "string" }
+          - { label: "Titolo sezione spuntini", name: "spuntini_titolo", widget: "string" }
+          - { label: "Occhiello sezione spuntini", name: "spuntini_kicker", widget: "string" }
+          - { label: "Occhiello sezione piatti", name: "piatti_kicker", widget: "string" }
+          - { label: "Titolo sezione piatti", name: "piatti_titolo", widget: "string" }
+          - { label: "Testo introduttivo piatti", name: "piatti_testo", widget: "text" }
+          - { label: "Occhiello bevande", name: "bevande_kicker", widget: "string" }
+          - { label: "Titolo bevande", name: "bevande_titolo", widget: "string" }
+          - { label: "Testo bevande", name: "bevande_testo", widget: "text" }
+          - label: "Foto delle bevande"
+            name: "bevande_foto"
+            widget: "list"
+            fields:
+              - { label: "Foto", name: "immagine", widget: "image" }
+              - { label: "Descrizione", name: "descrizione", widget: "string", required: false }
+          - { label: "Titolo «Come funziona»", name: "funziona_titolo", widget: "string" }
+          - { label: "Testo «Come funziona»", name: "funziona_testo", widget: "markdown" }
+          - { label: "Foto in cima alla pagina", name: "hero_immagine", widget: "image" }
+          - { label: "Titolo in cima alla pagina", name: "hero_titolo", widget: "string" }
+          - { label: "Sottotitolo in cima alla pagina", name: "hero_sottotitolo", widget: "string" }
+          - { label: "Titolo per Google", name: "seo_titolo", widget: "string" }
+          - { label: "Descrizione per Google", name: "seo_descrizione", widget: "text" }
 
-  - name: "gallery"
-    label: "Galleria foto"
+  # ---------------------------------------------------------------
+  - name: "galleria"
+    label: "📷 Galleria foto"
     files:
-      - name: "gallery"
+      - name: "galleria"
         label: "Foto della Locanda"
-        file: "data/gallery.json"
+        file: "src/_data/galleria.json"
         fields:
-          - name: "foto"
-            label: "Foto (trascina per riordinare)"
+          - label: "Foto (trascina per riordinare)"
+            name: "foto"
             widget: "list"
             fields:
               - { label: "Immagine", name: "image", widget: "image" }
               - { label: "Descrizione", name: "caption", widget: "string", required: false }
+          - { label: "Foto in cima alla pagina", name: "hero_immagine", widget: "image" }
+          - { label: "Titolo in cima alla pagina", name: "hero_titolo", widget: "string" }
+          - { label: "Sottotitolo in cima alla pagina", name: "hero_sottotitolo", widget: "string" }
+          - { label: "Titolo finale", name: "chiusura_titolo", widget: "string" }
+          - { label: "Testo finale", name: "chiusura_testo", widget: "text" }
+          - { label: "Titolo per Google", name: "seo_titolo", widget: "string" }
+          - { label: "Descrizione per Google", name: "seo_descrizione", widget: "text" }
+
+  # ---------------------------------------------------------------
+  - name: "camere"
+    label: "🛏️ Camere e prezzi"
+    files:
+      - name: "camere"
+        label: "Pagina Camere & Agriturismo"
+        file: "src/_data/camere.json"
+        fields:
+          - label: "Le camere"
+            name: "camere"
+            widget: "list"
+            fields:
+              - { label: "Foto", name: "immagine", widget: "image" }
+              - { label: "Nome camera", name: "nome", widget: "string" }
+              - { label: "Descrizione", name: "testo", widget: "text" }
+          - label: "Prezzi"
+            name: "prezzi"
+            widget: "list"
+            fields:
+              - { label: "Tipo di camera", name: "tipo", widget: "string" }
+              - { label: "Prezzo", name: "prezzo", widget: "string", hint: "Es. 85€" }
+          - { label: "Occhiello prezzi", name: "prezzi_kicker", widget: "string" }
+          - { label: "Titolo prezzi", name: "prezzi_titolo", widget: "string" }
+          - { label: "Occhiello introduzione", name: "intro_kicker", widget: "string" }
+          - { label: "Titolo introduzione", name: "intro_titolo", widget: "string" }
+          - { label: "Testo introduzione", name: "intro_testo", widget: "text" }
+          - { label: "Occhiello bagni", name: "bagni_kicker", widget: "string" }
+          - { label: "Titolo bagni", name: "bagni_titolo", widget: "string" }
+          - { label: "Testo bagni", name: "bagni_testo", widget: "text" }
+          - label: "Foto dei bagni"
+            name: "bagni_foto"
+            widget: "list"
+            fields:
+              - { label: "Foto", name: "immagine", widget: "image" }
+              - { label: "Descrizione", name: "descrizione", widget: "string", required: false }
+          - { label: "Foto colazione", name: "colazione_immagine", widget: "image" }
+          - { label: "Etichetta colazione", name: "colazione_tag", widget: "string" }
+          - { label: "Titolo colazione", name: "colazione_titolo", widget: "string" }
+          - { label: "Testo colazione", name: "colazione_testo", widget: "markdown" }
+          - { label: "Occhiello prenotazioni", name: "prenota_kicker", widget: "string" }
+          - { label: "Titolo prenotazioni", name: "prenota_titolo", widget: "string" }
+          - { label: "Testo prenotazioni", name: "prenota_testo", widget: "text" }
+          - { label: "Foto in cima alla pagina", name: "hero_immagine", widget: "image" }
+          - { label: "Titolo in cima alla pagina", name: "hero_titolo", widget: "string" }
+          - { label: "Sottotitolo in cima alla pagina", name: "hero_sottotitolo", widget: "string" }
+          - { label: "Titolo per Google", name: "seo_titolo", widget: "string" }
+          - { label: "Descrizione per Google", name: "seo_descrizione", widget: "text" }
+
+  # ---------------------------------------------------------------
+  - name: "home"
+    label: "🏠 Home page"
+    files:
+      - name: "home"
+        label: "Prima pagina del sito"
+        file: "src/_data/home.json"
+        fields:
+          - { label: "Foto di copertina", name: "hero_immagine", widget: "image" }
+          - { label: "Titolo di copertina", name: "hero_titolo", widget: "string" }
+          - { label: "Frase di copertina", name: "hero_sottotitolo", widget: "string" }
+          - { label: "Testo di copertina", name: "hero_testo", widget: "text" }
+          - { label: "Occhiello introduzione", name: "intro_kicker", widget: "string" }
+          - { label: "Titolo introduzione", name: "intro_titolo", widget: "string" }
+          - { label: "Testo introduzione", name: "intro_testo", widget: "text" }
+          - label: "I tre riquadri"
+            name: "riquadri"
+            widget: "list"
+            fields:
+              - { label: "Foto", name: "immagine", widget: "image" }
+              - { label: "Titolo", name: "titolo", widget: "string" }
+              - { label: "Testo", name: "testo", widget: "text" }
+              - { label: "Testo del link", name: "link_testo", widget: "string", required: false }
+              - { label: "Indirizzo del link", name: "link_url", widget: "string", required: false, hint: "Es. /camere.html" }
+          - { label: "Foto sezione storia", name: "storia_immagine", widget: "image" }
+          - { label: "Etichetta storia", name: "storia_tag", widget: "string" }
+          - { label: "Titolo storia", name: "storia_titolo", widget: "string" }
+          - { label: "Testo storia", name: "storia_testo", widget: "markdown" }
+          - { label: "Bottone storia", name: "storia_bottone", widget: "string" }
+          - { label: "Occhiello recensioni", name: "recensioni_kicker", widget: "string" }
+          - { label: "Titolo recensioni", name: "recensioni_titolo", widget: "string" }
+          - label: "Recensioni"
+            name: "recensioni"
+            widget: "list"
+            fields:
+              - { label: "Testo della recensione", name: "testo", widget: "text" }
+              - { label: "Fonte", name: "fonte", widget: "string" }
+          - { label: "Occhiello finale", name: "chiusura_kicker", widget: "string" }
+          - { label: "Titolo finale", name: "chiusura_titolo", widget: "string" }
+          - { label: "Testo finale", name: "chiusura_testo", widget: "text" }
+          - { label: "Titolo per Google", name: "seo_titolo", widget: "string" }
+          - { label: "Descrizione per Google", name: "seo_descrizione", widget: "text" }
+
+  # ---------------------------------------------------------------
+  - name: "chisiamo"
+    label: "📖 Chi Siamo"
+    files:
+      - name: "chisiamo"
+        label: "Pagina Chi Siamo"
+        file: "src/_data/chisiamo.json"
+        fields:
+          - { label: "Foto sezione storia", name: "storia_immagine", widget: "image" }
+          - { label: "Etichetta storia", name: "storia_tag", widget: "string" }
+          - { label: "Titolo storia", name: "storia_titolo", widget: "string" }
+          - { label: "Testo storia", name: "storia_testo", widget: "markdown" }
+          - { label: "Foto seconda sezione", name: "anima_immagine", widget: "image" }
+          - { label: "Titolo seconda sezione", name: "anima_titolo", widget: "string" }
+          - { label: "Testo seconda sezione", name: "anima_testo", widget: "markdown" }
+          - { label: "Occhiello «spirito»", name: "spirito_kicker", widget: "string" }
+          - { label: "Titolo «spirito»", name: "spirito_titolo", widget: "string" }
+          - label: "I punti dello spirito della Contea"
+            name: "spirito_punti"
+            widget: "list"
+            fields:
+              - { label: "Titolo", name: "titolo", widget: "string" }
+              - { label: "Testo", name: "testo", widget: "text" }
+          - { label: "Occhiello eventi", name: "eventi_kicker", widget: "string" }
+          - { label: "Titolo eventi", name: "eventi_titolo", widget: "string" }
+          - { label: "Testo eventi", name: "eventi_testo", widget: "text" }
+          - label: "Foto degli eventi"
+            name: "eventi_foto"
+            widget: "list"
+            fields:
+              - { label: "Foto", name: "immagine", widget: "image" }
+              - { label: "Descrizione", name: "descrizione", widget: "string", required: false }
+          - { label: "Titolo finale", name: "chiusura_titolo", widget: "string" }
+          - { label: "Foto in cima alla pagina", name: "hero_immagine", widget: "image" }
+          - { label: "Titolo in cima alla pagina", name: "hero_titolo", widget: "string" }
+          - { label: "Sottotitolo in cima alla pagina", name: "hero_sottotitolo", widget: "string" }
+          - { label: "Titolo per Google", name: "seo_titolo", widget: "string" }
+          - { label: "Descrizione per Google", name: "seo_descrizione", widget: "text" }
+
+  # ---------------------------------------------------------------
+  - name: "contatti"
+    label: "📍 Contatti e orari"
+    files:
+      - name: "contatti"
+        label: "Pagina Contatti"
+        file: "src/_data/contatti.json"
+        fields:
+          - label: "Orari di apertura"
+            name: "orari"
+            widget: "list"
+            fields:
+              - { label: "Giorno", name: "giorno", widget: "string" }
+              - { label: "Orario", name: "orario", widget: "string", hint: "Es. 20:00 – 01:00" }
+          - { label: "Nota", name: "nota", widget: "text" }
+          - { label: "Nome pagina Facebook", name: "facebook_nome", widget: "string" }
+          - { label: "Occhiello indicazioni", name: "indicazioni_kicker", widget: "string" }
+          - { label: "Titolo indicazioni", name: "indicazioni_titolo", widget: "string" }
+          - label: "Indicazioni stradali"
+            name: "indicazioni"
+            widget: "list"
+            fields:
+              - { label: "Provenienza", name: "da", widget: "string", hint: "Es. Da Torino" }
+              - { label: "Percorso", name: "testo", widget: "text" }
+          - { label: "Etichetta", name: "tag", widget: "string" }
+          - { label: "Titolo", name: "titolo", widget: "string" }
+          - { label: "Titolo finale", name: "chiusura_titolo", widget: "string" }
+          - { label: "Testo finale", name: "chiusura_testo", widget: "text" }
+          - { label: "Indirizzo mappa (incorporata)", name: "mappa_embed", widget: "string" }
+          - { label: "Link «Apri in Google Maps»", name: "mappa_link", widget: "string" }
+          - { label: "Foto in cima alla pagina", name: "hero_immagine", widget: "image" }
+          - { label: "Titolo in cima alla pagina", name: "hero_titolo", widget: "string" }
+          - { label: "Sottotitolo in cima alla pagina", name: "hero_sottotitolo", widget: "string" }
+          - { label: "Titolo per Google", name: "seo_titolo", widget: "string" }
+          - { label: "Descrizione per Google", name: "seo_descrizione", widget: "text" }
+
+  # ---------------------------------------------------------------
+  - name: "site"
+    label: "⚙️ Recapiti (validi su tutto il sito)"
+    files:
+      - name: "site"
+        label: "Nome, indirizzo, telefono, social"
+        file: "src/_data/site.json"
+        fields:
+          - { label: "Nome della Locanda", name: "nome", widget: "string" }
+          - { label: "Sottotitolo (sotto al nome)", name: "sottotitolo", widget: "string" }
+          - { label: "Indirizzo — prima riga", name: "indirizzo_riga1", widget: "string" }
+          - { label: "Indirizzo — seconda riga", name: "indirizzo_riga2", widget: "string" }
+          - { label: "Telefono (come si legge)", name: "telefono", widget: "string", hint: "Es. 393 9105548" }
+          - { label: "Telefono (per chiamare)", name: "telefono_link", widget: "string", hint: "Senza spazi, con prefisso: +393939105548" }
+          - { label: "Numero WhatsApp", name: "whatsapp_link", widget: "string", hint: "Senza + e senza spazi: 393939105548" }
+          - { label: "Email", name: "email", widget: "string" }
+          - { label: "Link Instagram", name: "instagram", widget: "string" }
+          - { label: "Link TripAdvisor", name: "tripadvisor", widget: "string" }
