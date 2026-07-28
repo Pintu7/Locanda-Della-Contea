@@ -1,0 +1,16 @@
+/* Aggiustamenti solo per l'iframe di anteprima del pannello /admin.
+   Il resto dello stile arriva da assets/css/style.css (stesso foglio del sito vero). */
+
+body {
+  background: var(--parchment);
+}
+
+.cms-preview-note {
+  background: #fff3cd;
+  color: #664d03;
+  font-family: sans-serif;
+  font-size: 0.8rem;
+  padding: 0.6rem 1rem;
+  border-bottom: 1px solid #ffe69c;
+  text-align: center;
+}

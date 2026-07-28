@@ -18,7 +18,10 @@ src/
     layout.njk    ← header, footer e <head> condivisi
   *.njk           ← una pagina per file
   src.11tydata.js ← titolo/descrizione Google presi da _data
-admin/            ← pannello CMS (config.yml definisce i campi)
+admin/            ← pannello CMS
+  config.yml        campi del pannello
+  preview.js        template di anteprima (riusano le classi CSS del sito vero)
+  preview.css        piccoli aggiustamenti solo per l'iframe di anteprima
 assets/           ← immagini, CSS, font Aniron, JS
 ```
 
@@ -80,6 +83,14 @@ for (const col of c.collections) for (const f of (col.files||[])) {
 console.log('controllo finito');
 "
 ```
+
+## Anteprima nel pannello
+
+`admin/preview.js` registra un template React (`CMS.registerPreviewTemplate`) per ognuna delle 6 collection principali (menu, galleria, camere, home, chisiamo, contatti). Riusa le classi di `assets/css/style.css` (caricato via `registerPreviewStyle`), quindi l'anteprima ha lo stesso aspetto del sito vero — manca solo header/nav/footer, uguali su ogni pagina.
+
+Se aggiungi un campo, aggiornalo in tre posti (non due): JSON, template `.njk` **e** `admin/preview.js`, altrimenti l'anteprima resta indietro rispetto al sito vero (il sito pubblicato è comunque corretto, solo l'anteprima nel pannello sarebbe incompleta).
+
+Per testare i template di anteprima senza dover passare da un vero login GitHub, si può eseguire `admin/preview.js` in isolamento nella console del browser, intercettando `CMS.registerPreviewTemplate` e chiamando `.render()` sui componenti con dati finti — utile per becccare eccezioni prima di pushare. Non sostituisce un controllo visivo reale nel pannello.
 
 ## Note
 

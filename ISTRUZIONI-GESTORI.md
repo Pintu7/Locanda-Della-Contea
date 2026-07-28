@@ -23,6 +23,10 @@ Nella colonna di sinistra trovi una voce per ogni parte del sito:
 | 📍 **Contatti e orari** | Orari di apertura, indicazioni stradali, mappa |
 | ⚙️ **Recapiti** | Telefono, email, indirizzo, link social — valgono su tutte le pagine |
 
+## L'anteprima
+
+Mentre modifichi un testo o una foto, a destra vedi un'anteprima con lo stesso stile del sito vero (colori, font, layout). Manca solo il menu in alto e il piè di pagina — quelli restano uguali su tutte le pagine e non serve vederli ogni volta.
+
 ## La regola d'oro
 
 Dopo ogni modifica clicca **"Publish"** (o "Save" + "Publish" a seconda del riquadro), altrimenti resta una bozza e sul sito non si vede nulla.

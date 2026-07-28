@@ -11,8 +11,6 @@ backend:
 media_folder: "assets/img/gallery-uploads"
 public_folder: "/assets/img/gallery-uploads"
 
-locale: "it"
-
 collections:
   # ---------------------------------------------------------------
   - name: "menu"
