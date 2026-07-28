@@ -5,7 +5,9 @@ Niente codice, niente file da toccare: si usa una pagina web con dei moduli, com
 ## Accesso
 
 1. Vai su `https://<indirizzo-del-sito>/admin`
-2. Accedi con l'email e la password che hai ricevuto via mail. Se è la prima volta hai ricevuto un invito da Netlify: clicca il link e imposta la password.
+2. Clicca **"Sign In with GitHub"**.
+3. Se non hai ancora un account GitHub: cliccando "Sign In with GitHub" ti verrà proposto di crearne uno, gratis, con la tua email — bastano due minuti la prima volta. Se hai ricevuto un invito via email da GitHub, accettalo prima di fare login.
+4. Le volte successive basta un click, resti collegato.
 
 ## Cosa puoi modificare
 
@@ -23,7 +25,7 @@ Nella colonna di sinistra trovi una voce per ogni parte del sito:
 
 ## La regola d'oro
 
-Dopo ogni modifica clicca **"Publish"** in alto a destra, altrimenti resta una bozza e sul sito non si vede nulla.
+Dopo ogni modifica clicca **"Publish"** (o "Save" + "Publish" a seconda del riquadro), altrimenti resta una bozza e sul sito non si vede nulla.
 
 Il sito si aggiorna da solo in **1-2 minuti**. Se ricarichi subito potresti vedere ancora la versione vecchia: aspetta un attimo e ricarica di nuovo.
 
@@ -34,7 +36,7 @@ Menù della settimana → Piatti Nanico ed Elfico → modifica le portate → Pu
 Ogni portata è una riga. Il bottone **+** aggiunge una riga, il **cestino** la toglie.
 
 **Aggiungere una foto alla galleria**
-Galleria foto → in fondo alla lista clicca **+** → "Choose an image" → carica la foto dal telefono o dal computer → scrivi una breve descrizione → Publish.
+Galleria foto → in fondo alla lista clicca **+** → carica la foto dal telefono o dal computer → scrivi una breve descrizione → Publish.
 
 **Cambiare l'ordine delle foto**
 Trascinale usando la maniglia (le righette a sinistra di ogni riquadro).
@@ -56,7 +58,7 @@ Alcuni campi (le storie, i testi lunghi) permettono il grassetto: seleziona la p
 ## Se qualcosa non va
 
 - **Non vedo le modifiche sul sito** → hai cliccato "Publish"? Poi aspetta 2 minuti e ricarica.
-- **Il pannello non mi fa entrare** → prova a fare logout e login di nuovo.
+- **Non riesco ad accedere** → assicurati di aver accettato l'invito GitHub ricevuto via email, poi riprova il login.
 - **Ho cancellato qualcosa per sbaglio** → niente panico, si recupera tutto. Scrivi ad Andrea.
 
 Per qualsiasi dubbio, scrivi ad Andrea.

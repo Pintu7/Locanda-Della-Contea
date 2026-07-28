@@ -1,6 +1,6 @@
 # Setup tecnico
 
-Il sito è generato con [Eleventy](https://www.11ty.dev/): i testi vivono in file JSON dentro `src/_data/`, i template in `src/`, e la build produce HTML statico in `_site/`. I gestori modificano i JSON tramite il pannello Decap CMS su `/admin`, Netlify ricompila a ogni salvataggio.
+Il sito è generato con [Eleventy](https://www.11ty.dev/): i testi vivono in file JSON dentro `src/_data/`, i template in `src/`, e la build produce HTML statico in `_site/`. I gestori modificano i JSON tramite il pannello **Sveltia CMS** su `/admin`, Netlify ricompila a ogni salvataggio.
 
 ## Struttura
 
@@ -35,12 +35,25 @@ Server su `http://localhost:8080` con ricarica automatica. Per la sola build: `n
 
 Netlify legge `netlify.toml`: build `npm run build`, publish `_site`. Ogni push su `main` — inclusi quelli fatti dal pannello CMS — fa partire un deploy.
 
-## Attivazione del pannello (già fatto, qui per riferimento)
+## Attivazione del pannello (fallo tu, una tantum)
 
-1. Netlify → **Site configuration → Identity → Enable Identity**
-2. Identity → **Registration** → "Invite only"
-3. Identity → **Services → Git Gateway → Enable**
-4. Identity → **Invite users** → email dei gestori
+Il pannello usa **Sveltia CMS** con backend **GitHub via il proxy OAuth di Netlify**: niente server custom da mantenere, ma i gestori devono avere un account GitHub (anche minimale, creato al volo con la loro email) ed essere collaboratori del repo.
+
+1. **Crea un'app OAuth su GitHub**
+   github.com → tue impostazioni account → **Developer settings → OAuth Apps → New OAuth App**
+   - Homepage URL: `https://<tuosito>.netlify.app` (o il dominio definitivo)
+   - Authorization callback URL: `https://api.netlify.com/auth/done`
+   - Salva Client ID e Client Secret.
+
+2. **Collega l'app OAuth a Netlify**
+   Netlify → sito → **Site configuration → General → OAuth** → sezione "Git provider" → **Install provider** → GitHub → incolla Client ID e Client Secret.
+
+3. **Aggiungi i gestori come collaboratori del repo**
+   GitHub → repo `Pintu7/Locanda-Della-Contea` → **Settings → Collaborators → Add people** → invita la loro email (se non hanno GitHub, ricevono un invito per crearlo).
+
+4. Fatto. Su `/admin` cliccano "Sign In with GitHub".
+
+Vedi [ISTRUZIONI-GESTORI.md](ISTRUZIONI-GESTORI.md) per la guida che ho scritto per loro.
 
 ## Aggiungere un campo modificabile dal pannello
 
@@ -50,7 +63,7 @@ Tre passaggi, in quest'ordine:
 2. Usala nel template `.njk`
 3. Dichiarala in `admin/config.yml` nella collection giusta
 
-⚠️ **Il passaggio 3 non è opzionale.** Decap riscrive il file con i soli campi dichiarati nella config: una chiave presente nel JSON ma assente dalla config viene **cancellata** al primo salvataggio dal pannello, e la pagina si rompe.
+⚠️ **Il passaggio 3 non è opzionale.** Il pannello riscrive il file con i soli campi dichiarati nella config: una chiave presente nel JSON ma assente dalla config viene **cancellata** al primo salvataggio, e la pagina si rompe.
 
 Per verificare che config e dati combacino:
 
@@ -70,6 +83,6 @@ console.log('controllo finito');
 
 ## Note
 
-- **Le voci dei piatti sono stringhe semplici**, non oggetti: è il formato che il widget `list` di Decap con un solo `field` produce naturalmente. Mescolare i due formati causava `undefined` in pagina; il template ha comunque un fallback per dati vecchi.
+- **Perché Sveltia e non Decap CMS**: stessa struttura di `config.yml`, ma UI molto più curata (anteprima live, drag&drop). In cambio Sveltia ha eliminato il supporto al backend `git-gateway` (quello con login email+password via invito Netlify Identity), quindi il backend è passato a `github` — i gestori accedono con un account GitHub invece che con email+password.
+- **Le voci dei piatti sono stringhe semplici**, non oggetti: è il formato che il widget `list` con un solo `field` produce naturalmente. Mescolare i due formati causava `undefined` in pagina; il template ha comunque un fallback per dati vecchi.
 - **`--header-border` in `style.css`** tiene allineati il bordo dell'header e la posizione della nav mobile. Il posizionamento assoluto si calcola sul padding box (che esclude il bordo), quindi senza quella variabile il menu aperto si sovrappone al bordo dorato e si vedono due righe gialle.
-- **Il widget Netlify Identity** è caricato solo sulla home, dove atterrano i link di invito e recupero password.

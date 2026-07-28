@@ -1,6 +1,12 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: Pintu7/Locanda-Della-Contea
   branch: main
+  # Passa dall'app OAuth GitHub via il proxy integrato di Netlify: niente
+  # server OAuth da mantenere. Va abilitato una volta sola in Netlify
+  # (Site configuration -> General -> OAuth -> Install provider -> GitHub).
+  base_url: https://api.netlify.com
+  auth_endpoint: auth
 
 media_folder: "assets/img/gallery-uploads"
 public_folder: "/assets/img/gallery-uploads"
