@@ -1,24 +1,16 @@
 {
-  "seo_titolo": "Contatti — Locanda della Contea",
-  "seo_descrizione": "Contatti e indicazioni stradali per raggiungere la Locanda della Contea a Montalenghe (TO), Piemonte.",
-
-  "hero_immagine": "/assets/img/gallery-01.jpg",
-  "hero_titolo": "Contatti",
-  "hero_sottotitolo": "Un cartello segnalerà il posteggio",
-
-  "tag": "Locanda della Contea",
-  "titolo": "Vieni a trovarci",
-  "facebook_nome": "Locanda della Contea – The Shire Inn",
-  "nota": "Per piatti, camere e informazioni sugli eventi è consigliato scrivere o chiamare in anticipo.",
-
   "orari": [
-    { "giorno": "Venerdì", "orario": "20:00 – 01:00" },
-    { "giorno": "Sabato", "orario": "20:00 – 01:00" }
+    {
+      "giorno": "Venerdì",
+      "orario": "20:00 – 01:00"
+    },
+    {
+      "giorno": "Sabato",
+      "orario": "20:00 – 01:00"
+    }
   ],
-
-  "mappa_embed": "https://www.openstreetmap.org/export/embed.html?bbox=7.8020%2C45.3280%2C7.8420%2C45.3480&layer=mapnik&marker=45.3380%2C7.8220",
-  "mappa_link": "https://www.google.com/maps/search/?api=1&query=SP+53+Caluso-Ozegna+17,+10090+Montalenghe+TO",
-
+  "nota": "Per piatti, camere e informazioni sugli eventi è consigliato scrivere o chiamare in anticipo.",
+  "facebook_nome": "Locanda della Contea – The Shire Inn",
   "indicazioni_kicker": "Come raggiungerci",
   "indicazioni_titolo": "La strada verso la Contea",
   "indicazioni": [
@@ -35,7 +27,15 @@
       "testo": "Autostrada A4 direzione Torino, uscita per E25/A5 direzione Monte Bianco/Gran San Bernardo/Santhià/Ivrea. Prosegui su A5 direzione Torino, uscita San Giorgio, poi SP53 direzione Montalenghe/Caluso."
     }
   ],
-
+  "tag": "Locanda della Contea",
+  "titolo": "Vieni a trovarci",
   "chiusura_titolo": "Ci vediamo nella Contea",
-  "chiusura_testo": "Un sorriso ad accoglierti sulla soglia — sempre."
+  "chiusura_testo": "Un sorriso ad accoglierti sulla soglia — sempre.",
+  "mappa_embed": "https://www.openstreetmap.org/export/embed.html?bbox=7.8020%2C45.3280%2C7.8420%2C45.3480&layer=mapnik&marker=45.3380%2C7.8220",
+  "mappa_link": "https://www.google.com/maps/search/?api=1&query=SP+53+Caluso-Ozegna+17,+10090+Montalenghe+TO",
+  "hero_immagine": "/assets/img/gallery-uploads/20220807_195653.jpg",
+  "hero_titolo": "Contatti",
+  "hero_sottotitolo": "Vi aspettiamo in Locanda",
+  "seo_titolo": "Contatti — Locanda della Contea",
+  "seo_descrizione": "Contatti e indicazioni stradali per raggiungere la Locanda della Contea a Montalenghe (TO), Piemonte."
 }
