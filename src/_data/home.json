@@ -1,16 +1,11 @@
 {
-  "seo_titolo": "Locanda della Contea — The Shire Inn | Montalenghe",
-  "seo_descrizione": "Locanda della Contea: locanda-agriturismo a km0 a tema Signore degli Anelli nel cuore del Canavese, Montalenghe (TO). Camere, cucina di casa, eventi nella Contea.",
-
   "hero_immagine": "/assets/img/gallery-02.jpg",
   "hero_titolo": "Locanda della Contea",
   "hero_sottotitolo": "«Varcare la soglia ti catapulta in un altro mondo»",
   "hero_testo": "Una locanda-agriturismo a km0, nata da una famiglia di famiglie che ha scelto di vivere come nella Contea: buon cibo, buona compagnia e un sorriso ad accoglierti sulla soglia.",
-
   "intro_kicker": "Benvenuti nella Contea",
   "intro_titolo": "Non un ristorante, non un pub, non un albergo",
   "intro_testo": "Sappiamo che se avessimo fatto un ristorante, o un pub, o un albergo… tutto sarebbe stato più facile! Però di ristoranti, pub e alberghi ce ne sono tanti. Di Locanda ce n'è una sola.",
-
   "riquadri": [
     {
       "immagine": "/assets/img/room-1.jpg",
@@ -20,7 +15,7 @@
       "link_url": "/camere.html"
     },
     {
-      "immagine": "/assets/img/gallery-12.jpg",
+      "immagine": "/assets/img/gallery-uploads/foto000.png",
       "titolo": "Cucina di casa, km0",
       "testo": "Piatti fissi come al focolare di casa, ingredienti del territorio, birre, idromele e pozioni della Locanda.",
       "link_testo": "Vedi il menù →",
@@ -34,13 +29,11 @@
       "link_url": "/chi-siamo.html"
     }
   ],
-
-  "storia_immagine": "/assets/img/gallery-01.jpg",
+  "storia_immagine": "/assets/img/gallery-uploads/WhatsApp Image 2026-04-13 at 13.41.47 (4).jpeg",
   "storia_tag": "Km0 · Agriturismo · Famiglia",
   "storia_titolo": "Una famiglia di famiglie",
   "storia_testo": "Due architetti, quattro musicisti, due contadini, due contabili, tre tuttofare, quattro osti, un'organizzatrice di eventi, svariati cuochi… eppure siamo molti meno di quel che sembra.\n\nQuesto ambizioso progetto non nasce da un'idea di business, ma dalla voglia di cambiare vita, riordinare le priorità e contagiare gli altri a fare lo stesso.",
   "storia_bottone": "La nostra storia",
-
   "recensioni_kicker": "Chi ci ha trovato",
   "recensioni_titolo": "Voci dalla Contea",
   "recensioni": [
@@ -57,8 +50,9 @@
       "fonte": "Recensione TripAdvisor"
     }
   ],
-
   "chiusura_kicker": "Vieni a trovarci",
   "chiusura_titolo": "SP 53 Caluso–Ozegna n°17, Montalenghe (TO)",
-  "chiusura_testo": "È molto consigliato prenotare. Per piatti, camere ed eventi scrivici o chiamaci."
+  "chiusura_testo": "È molto consigliato prenotare. Per piatti, camere ed eventi scrivici o chiamaci.",
+  "seo_titolo": "Locanda della Contea — The Shire Inn | Montalenghe",
+  "seo_descrizione": "Locanda della Contea: locanda-agriturismo a km0 a tema Signore degli Anelli nel cuore del Canavese, Montalenghe (TO). Camere, cucina di casa, eventi nella Contea."
 }
